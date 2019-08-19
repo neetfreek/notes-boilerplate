@@ -141,4 +141,10 @@
       <Name>ToDo</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\icon_info.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\icon_menu.png" />
+  </ItemGroup>
 </Project>
