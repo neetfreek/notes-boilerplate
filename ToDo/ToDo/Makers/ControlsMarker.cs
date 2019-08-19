@@ -3,7 +3,7 @@
 ***************************************************************************/
 using Xamarin.Forms;
 
-namespace ToDo
+namespace ToDo.Makers
 {
     public static class ControlsMarker
     {
