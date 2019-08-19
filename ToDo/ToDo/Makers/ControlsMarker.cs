@@ -7,6 +7,29 @@ namespace ToDo.Makers
 {
     public static class ControlsMarker
     {
+        public static Entry NewEditor(string text, double fontSize, double margin)
+        {
+            Entry entry = new Entry
+            {
+                Text = text,
+                FontSize = fontSize,
+                Margin = margin,
+            };
+
+            return entry;
+        }
+
+        public static Entry NewEntry(string text, double fontSize)
+        {
+            Entry entry = new Entry
+            {
+                Text = text,
+                FontSize = fontSize,
+            };
+
+            return entry;
+        }
+
         public static Label NewLabel(string text, double fontSize)
         {
             Label label = new Label
