@@ -1,12 +1,13 @@
-﻿using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+using Xamarin.Forms;
 
 using ToDo.Makers;
 
 namespace ToDo.Views
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class MainPage : TabbedPage
+    public class MainPage: TabbedPage
     {
         public MainPage()
         {

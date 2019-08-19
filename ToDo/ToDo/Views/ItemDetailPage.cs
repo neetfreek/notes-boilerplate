@@ -6,8 +6,7 @@ using ToDo.Makers;
 
 namespace ToDo.Views
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class ItemDetailPage : ContentPage
+    public class ItemDetailPage : ContentPage
     {
         public ItemDetailPage(ItemDetailViewModel viewModel)
         {
