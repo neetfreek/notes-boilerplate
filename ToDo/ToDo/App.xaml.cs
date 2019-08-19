@@ -13,7 +13,6 @@ namespace ToDo
         {
             InitializeComponent();
 
-
             MainPage = new MainPage();
         }
 
