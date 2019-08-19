@@ -1,37 +1,29 @@
-﻿using System;
-
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-
-using ToDo.Models;
 using ToDo.ViewModels;
+
+using ToDo.Makers;
 
 namespace ToDo.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ItemDetailPage : ContentPage
     {
-        ItemDetailViewModel viewModel;
-
         public ItemDetailPage(ItemDetailViewModel viewModel)
         {
-            InitializeComponent();
-
-            BindingContext = this.viewModel = viewModel;
-        }
-
-        public ItemDetailPage()
-        {
-            InitializeComponent();
-
-            var item = new Item
+            ContentPage pageTitle = new ContentPage()
             {
-                Text = "Item 1",
-                Description = "This is an item description."
+                Title = viewModel.Title,
             };
 
-            viewModel = new ItemDetailViewModel(item);
-            BindingContext = viewModel;
+            StackLayout stackLayout = ControlsMarker.NewStackLayout(15, 20);
+
+            stackLayout.Children.Add(ControlsMarker.NewLabel("Text:", 18));
+            stackLayout.Children.Add(ControlsMarker.NewLabel(viewModel.Item.Text, 14));
+            stackLayout.Children.Add(ControlsMarker.NewLabel("Description:", 18));
+            stackLayout.Children.Add(ControlsMarker.NewLabel(viewModel.Item.Description, 14));
+
+            Content = stackLayout;
         }
     }
 }
