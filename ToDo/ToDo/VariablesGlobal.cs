@@ -4,7 +4,7 @@
 
 namespace ToDo
 {
-    public static class GlobalVariables
+    public static class VariablesGlobal
     {
         public const double TEXT_SIZE_SMALL = 14;
         public const double TEXT_SIZE_MEDIUM = 18;
