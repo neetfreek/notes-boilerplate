@@ -11,8 +11,8 @@ namespace ToDo.Views
     {
         public MainPage()
         {
-            Children.Add(PagesMaker.NewNavigationpage(new ItemsPage(), "Browse", "icon_info.png"));
-            Children.Add(PagesMaker.NewNavigationpage(new AboutPage(), "About", "icon_menu"));
+            Children.Add(PagesMaker.NewNavigationpage(new ItemsPage(), VariablesTexts.PAGE_NAME_BROWSE, "icon_info.png"));
+            Children.Add(PagesMaker.NewNavigationpage(new AboutPage(), VariablesTexts.PAGE_NAME_ABOUT, "icon_menu"));
         }
     }
 }
