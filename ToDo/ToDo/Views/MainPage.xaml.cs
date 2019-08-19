@@ -10,7 +10,14 @@ namespace ToDo.Views
     {
         public MainPage()
         {
-            InitializeComponent();
+            NavigationPage pageItems = new NavigationPage(new ItemsPage());
+            pageItems.Title = "Browse";
+
+            NavigationPage pageAbout = new NavigationPage(new AboutPage());
+            pageAbout.Title = "About";
+
+            Children.Add(pageItems);
+            Children.Add(pageAbout);
         }
     }
 }
