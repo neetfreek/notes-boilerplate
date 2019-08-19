@@ -1,22 +1,23 @@
 ﻿/**************************************************************************
 * Creates, returns new control objects                                    *
 ***************************************************************************/
+using System;
 using Xamarin.Forms;
 
 namespace ToDo.Makers
 {
-    public static class ControlsMarker
+    public static class ControlsMaker
     {
-        public static Entry NewEditor(string text, double fontSize, double margin)
+        public static Editor NewEditor(string text, double fontSize, double margin)
         {
-            Entry entry = new Entry
+            Editor editor = new Editor
             {
                 Text = text,
                 FontSize = fontSize,
                 Margin = margin,
             };
 
-            return entry;
+            return editor;
         }
 
         public static Entry NewEntry(string text, double fontSize)
@@ -50,6 +51,19 @@ namespace ToDo.Makers
             };
 
             return stackLayout;
+        }
+
+        public static ToolbarItem NewToolbarItem(string text, EventHandler onClick)        
+        //public static ToolbarItem NewToolbarItem(string text, System.Windows.Input.ICommand onClick)
+
+        {
+            ToolbarItem toolbarItem = new ToolbarItem
+            {
+                Text = text,
+            };
+            toolbarItem.Clicked += onClick;
+
+            return toolbarItem;
         }
     }
 }
