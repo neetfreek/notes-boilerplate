@@ -15,12 +15,12 @@ namespace ToDo.Views
                 Title = viewModel.Title,
             };
 
-            StackLayout stackLayout = ControlsMarker.NewStackLayout(15, 20);
+            StackLayout stackLayout = ControlsMarker.NewStackLayout(GlobalVariables.PADDING_DEFAULT, GlobalVariables.SPACING_DEFAULT);
 
-            stackLayout.Children.Add(ControlsMarker.NewLabel("Text:", 18));
-            stackLayout.Children.Add(ControlsMarker.NewLabel(viewModel.Item.Text, 14));
-            stackLayout.Children.Add(ControlsMarker.NewLabel("Description:", 18));
-            stackLayout.Children.Add(ControlsMarker.NewLabel(viewModel.Item.Description, 14));
+            stackLayout.Children.Add(ControlsMarker.NewLabel("Text:", GlobalVariables.TEXT_SIZE_MEDIUM));
+            stackLayout.Children.Add(ControlsMarker.NewLabel(viewModel.Item.Text, GlobalVariables.TEXT_SIZE_SMALL));
+            stackLayout.Children.Add(ControlsMarker.NewLabel("Description:", GlobalVariables.TEXT_SIZE_MEDIUM));
+            stackLayout.Children.Add(ControlsMarker.NewLabel(viewModel.Item.Description, GlobalVariables.TEXT_SIZE_SMALL));
 
             Content = stackLayout;
         }
