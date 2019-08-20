@@ -11,8 +11,7 @@ namespace ToDo.Views
     {
         private Entry entryText = new Entry();
         private Editor editorDescription = new Editor();
-
-
+        
         public NewItemPage()
         {
             StackLayout stackLayout = LayoutCollectionMaker.NewStackLayout(VariablesGlobal.PADDING_DEFAULT, VariablesGlobal.SPACING_DEFAULT);
@@ -28,7 +27,7 @@ namespace ToDo.Views
             Content = stackLayout;
         }
 
-        async void Save_Clicked(object sender, EventArgs e)
+        private async void Save_Clicked(object sender, EventArgs e)
         {
             Item item = new Item
             {
