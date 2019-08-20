@@ -1,8 +1,9 @@
-﻿/********************************************************************
-* Creates, returns new InputView class derived objects like Editor, *
-*   Entry, SearchBar                                                *
-* These objects are used to take keyboard input.                    *
-*********************************************************************/
+﻿/********************************************************************************************
+* Creates, returns new InputView class derived objects like Editor,                         *
+*   Entry, SearchBar                                                                        *
+* These objects are used to take keyboard input.                                            *
+* https://docs.microsoft.com/en-us/dotnet/api/Xamarin.Forms.InputView?view=xamarin-forms    *
+*********************************************************************************************/
 using Xamarin.Forms;
 
 namespace ToDo.Makers
