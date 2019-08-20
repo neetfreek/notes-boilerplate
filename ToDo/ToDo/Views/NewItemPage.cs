@@ -15,16 +15,16 @@ namespace ToDo.Views
 
         public NewItemPage()
         {
-            StackLayout stackLayout = ControlsMaker.NewStackLayout(VariablesGlobal.PADDING_DEFAULT, VariablesGlobal.SPACING_DEFAULT);
-            entryText = ControlsMaker.NewEntry("", VariablesGlobal.TEXT_SIZE_SMALL);
-            editorDescription = ControlsMaker.NewEditor("", VariablesGlobal.TEXT_SIZE_SMALL, 0);
+            StackLayout stackLayout = LayoutCollectionMaker.NewStackLayout(VariablesGlobal.PADDING_DEFAULT, VariablesGlobal.SPACING_DEFAULT);
+            entryText = InputViewMaker.NewEntry("", VariablesGlobal.TEXT_SIZE_SMALL);
+            editorDescription = InputViewMaker.NewEditor("", VariablesGlobal.TEXT_SIZE_SMALL, 0);
 
-            stackLayout.Children.Add(ControlsMaker.NewLabel(VariablesTexts.LABEL_HEADER_TEXT, VariablesGlobal.TEXT_SIZE_MEDIUM));
+            stackLayout.Children.Add(ViewMaker.NewLabel(VariablesTexts.LABEL_HEADER_TEXT, VariablesGlobal.TEXT_SIZE_MEDIUM));
             stackLayout.Children.Add(entryText);
-            stackLayout.Children.Add(ControlsMaker.NewLabel(VariablesTexts.LABEL_HEADER_DESCRIPTION, VariablesGlobal.TEXT_SIZE_MEDIUM));
+            stackLayout.Children.Add(ViewMaker.NewLabel(VariablesTexts.LABEL_HEADER_DESCRIPTION, VariablesGlobal.TEXT_SIZE_MEDIUM));
             stackLayout.Children.Add(editorDescription);
 
-            ToolbarItems.Add(ControlsMaker.NewToolbarItem(VariablesTexts.TOOLBAR_NAME_SAVE, Save_Clicked));
+            ToolbarItems.Add(MenuItemMaker.NewToolbarItem(VariablesTexts.TOOLBAR_NAME_SAVE, Save_Clicked));
             Content = stackLayout;
         }
 
