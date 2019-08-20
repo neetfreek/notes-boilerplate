@@ -20,7 +20,7 @@ namespace ToDo.Makers
             return viewCell;
         }
 
-        public static NavigationPage NewNavigationpage(ContentPage pageToNavigateTo, string title, string iconImageSource)
+        public static NavigationPage NewNavigationpage(ContentPage pageToNavigateTo, string title, string iconImageSource = "")
         {
             var pageType = pageToNavigateTo.GetType();
 
