@@ -10,10 +10,7 @@ namespace ToDo.Views
     {
         public ItemDetailPage(ItemDetailViewModel viewModel)
         {
-            ContentPage pageTitle = new ContentPage()
-            {
-                Title = viewModel.Title,
-            };
+            Title = viewModel.Title;
 
             StackLayout stackLayout = LayoutMaker.NewStackLayout();
 

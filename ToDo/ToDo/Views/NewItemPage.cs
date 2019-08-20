@@ -14,6 +14,8 @@ namespace ToDo.Views
         
         public NewItemPage()
         {
+            Title = VariablesTexts.TOOLBAR_NAME_ADD;
+
             StackLayout stackLayout = LayoutMaker.NewStackLayout();
             entryText = InputViewMaker.NewEntry();
             editorDescription = InputViewMaker.NewEditor();

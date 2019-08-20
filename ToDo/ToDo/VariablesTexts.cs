@@ -19,6 +19,7 @@ namespace ToDo
         // Internal
         public const string PAGE_NAME_ABOUT = "About";
         public const string PAGE_NAME_BROWSE = "Browse";
+        public const string PAGE_NAME_ITEMS = "Home";
 
         public const string MESSAGE_ADDITEM = "AddItem";
 
