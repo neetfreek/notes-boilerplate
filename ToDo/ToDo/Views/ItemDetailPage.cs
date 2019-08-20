@@ -15,12 +15,12 @@ namespace ToDo.Views
                 Title = viewModel.Title,
             };
 
-            StackLayout stackLayout = LayoutCollectionMaker.NewStackLayout(VariablesGlobal.PADDING_DEFAULT, VariablesGlobal.SPACING_DEFAULT);
+            StackLayout stackLayout = LayoutCollectionMaker.NewStackLayout();
 
-            stackLayout.Children.Add(ViewMaker.NewLabel(viewModel.Item.Text, VariablesGlobal.TEXT_SIZE_SMALL));
-            stackLayout.Children.Add(ViewMaker.NewLabel(viewModel.Item.Description, VariablesGlobal.TEXT_SIZE_SMALL));
             stackLayout.Children.Add(ViewMaker.NewLabel(VariablesTexts.LABEL_HEADER_TEXT, VariablesGlobal.TEXT_SIZE_LARGE));
+            stackLayout.Children.Add(ViewMaker.NewLabel(viewModel.Item.Text));
             stackLayout.Children.Add(ViewMaker.NewLabel(VariablesTexts.LABEL_HEADER_DESCRIPTION, VariablesGlobal.TEXT_SIZE_LARGE));
+            stackLayout.Children.Add(ViewMaker.NewLabel(viewModel.Item.Description));
 
             Content = stackLayout;
         }

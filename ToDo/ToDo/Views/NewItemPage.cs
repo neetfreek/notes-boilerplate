@@ -14,16 +14,16 @@ namespace ToDo.Views
         
         public NewItemPage()
         {
-            StackLayout stackLayout = LayoutCollectionMaker.NewStackLayout(VariablesGlobal.PADDING_DEFAULT, VariablesGlobal.SPACING_DEFAULT);
-            entryText = InputViewMaker.NewEntry("", VariablesGlobal.TEXT_SIZE_SMALL);
-            editorDescription = InputViewMaker.NewEditor("", VariablesGlobal.TEXT_SIZE_SMALL, 0);
+            StackLayout stackLayout = LayoutCollectionMaker.NewStackLayout();
+            entryText = InputViewMaker.NewEntry();
+            editorDescription = InputViewMaker.NewEditor();
 
             stackLayout.Children.Add(ViewMaker.NewLabel(VariablesTexts.LABEL_HEADER_TEXT, VariablesGlobal.TEXT_SIZE_LARGE));
             stackLayout.Children.Add(entryText);
             stackLayout.Children.Add(ViewMaker.NewLabel(VariablesTexts.LABEL_HEADER_DESCRIPTION, VariablesGlobal.TEXT_SIZE_LARGE));
             stackLayout.Children.Add(editorDescription);
 
-            ToolbarItems.Add(MenuItemMaker.NewToolbarItem(VariablesTexts.TOOLBAR_NAME_SAVE, Save_Clicked));
+            ToolbarItems.Add(MenuItemMaker.NewToolbarItem(Save_Clicked, VariablesTexts.TOOLBAR_NAME_SAVE));
             Content = stackLayout;
         }
 
