@@ -13,7 +13,7 @@ namespace ToDo.Makers
 {
     public static class MenuItemMaker
     {
-        public static ToolbarItem NewToolbarItem(string text, EventHandler onClick)
+        public static ToolbarItem NewToolbarItem(EventHandler onClick, string text = "")
         {
             ToolbarItem toolbarItem = new ToolbarItem
             {

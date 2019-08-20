@@ -10,7 +10,7 @@ namespace ToDo.Makers
 {
     public static class ViewMaker
     {
-        public static Label NewLabel(string text, double fontSize)
+        public static Label NewLabel(string text = "", double fontSize = VariablesGlobal.TEXT_SIZE_MEDIUM)
         {
             Label label = new Label
             {

@@ -11,7 +11,7 @@ namespace ToDo.Makers
 {
     public static class LayoutCollectionMaker
     {
-        public static StackLayout NewStackLayout(double padding, double spacing)
+        public static StackLayout NewStackLayout(double padding = VariablesGlobal.PADDING_DEFAULT, double spacing = VariablesGlobal.SPACING_DEFAULT)
         {
             StackLayout stackLayout = new StackLayout
             {
