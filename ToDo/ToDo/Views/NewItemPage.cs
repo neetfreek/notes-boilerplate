@@ -14,7 +14,7 @@ namespace ToDo.Views
         
         public NewItemPage()
         {
-            StackLayout stackLayout = LayoutCollectionMaker.NewStackLayout();
+            StackLayout stackLayout = LayoutMaker.NewStackLayout();
             entryText = InputViewMaker.NewEntry();
             editorDescription = InputViewMaker.NewEditor();
 
