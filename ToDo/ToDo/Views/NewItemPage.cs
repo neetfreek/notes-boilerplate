@@ -18,9 +18,9 @@ namespace ToDo.Views
             entryText = InputViewMaker.NewEntry("", VariablesGlobal.TEXT_SIZE_SMALL);
             editorDescription = InputViewMaker.NewEditor("", VariablesGlobal.TEXT_SIZE_SMALL, 0);
 
-            stackLayout.Children.Add(ViewMaker.NewLabel(VariablesTexts.LABEL_HEADER_TEXT, VariablesGlobal.TEXT_SIZE_MEDIUM));
+            stackLayout.Children.Add(ViewMaker.NewLabel(VariablesTexts.LABEL_HEADER_TEXT, VariablesGlobal.TEXT_SIZE_LARGE));
             stackLayout.Children.Add(entryText);
-            stackLayout.Children.Add(ViewMaker.NewLabel(VariablesTexts.LABEL_HEADER_DESCRIPTION, VariablesGlobal.TEXT_SIZE_MEDIUM));
+            stackLayout.Children.Add(ViewMaker.NewLabel(VariablesTexts.LABEL_HEADER_DESCRIPTION, VariablesGlobal.TEXT_SIZE_LARGE));
             stackLayout.Children.Add(editorDescription);
 
             ToolbarItems.Add(MenuItemMaker.NewToolbarItem(VariablesTexts.TOOLBAR_NAME_SAVE, Save_Clicked));
