@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 
+using ToDo.ViewModels;
 using ToDo.Makers;
 
 namespace ToDo.Views

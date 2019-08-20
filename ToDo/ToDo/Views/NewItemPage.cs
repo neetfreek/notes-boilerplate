@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using ToDo.Models;
 using Xamarin.Forms;
 using ToDo.Makers;
