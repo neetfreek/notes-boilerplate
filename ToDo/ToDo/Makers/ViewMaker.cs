@@ -10,6 +10,40 @@ namespace ToDo.Makers
 {
     public static class ViewMaker
     {
+        public static ContentView NewContentView(Thickness padding, View content = null)
+        {
+            ContentView contentView = new ContentView()
+            {
+                Padding = padding,
+                Content = content,
+            };
+
+            return contentView;
+        }
+
+        public static Image NewImageByHeight(string source, LayoutOptions verticalOptions, int height)
+        {
+            Image image = new Image()
+            {
+                Source = source,
+                VerticalOptions = verticalOptions,
+                HeightRequest = height,
+            };
+
+            return image;
+        }
+        public static Image NewImageByWidth(string source, LayoutOptions horizontalOptions, int width)
+        {
+            Image image = new Image()
+            {
+                Source = source,
+                HorizontalOptions = horizontalOptions,
+                HeightRequest = width,
+            };
+
+            return image;
+        }
+
         public static Label NewLabel(string text = "", double fontSize = VariablesGlobal.TEXT_SIZE_MEDIUM)
         {
             Label label = new Label
