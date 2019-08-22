@@ -6,11 +6,17 @@ namespace ToDo
 {
     public static class VariablesGlobal
     {
-        public const double TEXT_SIZE_SMALL = 12;
-        public const double TEXT_SIZE_MEDIUM = 14;
-        public const double TEXT_SIZE_LARGE = 18;
-
-        public const double PADDING_DEFAULT = 15;
+        // Font size - converted to Device NamedSizes
+        public const string TEXT_SIZE_SMALL = "textSmall";
+        public const string TEXT_SIZE_MEDIUM = "textMedium";
+        public const string TEXT_SIZE_LARGE = "textLarge";
+        public const string TEXT_SIZE_TITLE = "title";
+        public const string TEXT_SIZE_SUBTITLE = "subTitle";
+        public const string TEXT_SIZE_HEADER = "header";
+        public const string TEXT_SIZE_BODY = "body";
+        public const string TEXT_SIZE_CAPTION = "caption";
+        public const string TEXT_SIZE_DEFAULT = "";
+        // Font formatting
         public const double SPACING_DEFAULT = 20;
 
         // Colours (Hex codes)

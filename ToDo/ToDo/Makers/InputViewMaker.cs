@@ -10,25 +10,25 @@ namespace ToDo.Makers
 {
     public static class InputViewMaker
     {
-        public static Editor NewEditor(string text = "", double fontSize = VariablesGlobal.TEXT_SIZE_MEDIUM, double margin = 0)
+        public static Editor NewEditor(string text = "", string fontSize = VariablesGlobal.TEXT_SIZE_MEDIUM, double margin = 0)
         {
             Editor editor = new Editor
             {
                 Text = text,
-                FontSize = fontSize,
                 Margin = margin,
             };
+            editor.FontSize = FontSizes.DeviceNamedFontSize(fontSize, editor);
 
             return editor;
         }
 
-        public static Entry NewEntry(string text = "", double fontSize = VariablesGlobal.TEXT_SIZE_MEDIUM)
+        public static Entry NewEntry(string text = "", string fontSize = VariablesGlobal.TEXT_SIZE_MEDIUM)
         {
             Entry entry = new Entry
             {
                 Text = text,
-                FontSize = fontSize,
             };
+            entry.FontSize = FontSizes.DeviceNamedFontSize(fontSize, entry);
 
             return entry;
         }

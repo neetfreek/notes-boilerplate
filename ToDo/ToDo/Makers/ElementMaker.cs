@@ -44,14 +44,14 @@ namespace ToDo.Makers
             return navigationPage;
         }
 
-        public static Span NewSpan(string text = "", double fontSize = VariablesGlobal.TEXT_SIZE_MEDIUM, FontAttributes fontAttributes = FontAttributes.None)
+        public static Span NewSpan(string text = "", string fontSize = VariablesGlobal.TEXT_SIZE_MEDIUM, FontAttributes fontAttributes = FontAttributes.None)
         {
             Span span = new Span
             {
                 Text = text,
-                FontSize = fontSize,
                 FontAttributes = fontAttributes,
             };
+            span.FontSize = FontSizes.DeviceNamedFontSize(fontSize, span);
 
             return span;
         }

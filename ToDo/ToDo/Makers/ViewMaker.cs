@@ -56,24 +56,18 @@ namespace ToDo.Makers
             return image;
         }
 
-        public static Label NewLabelString(string text = "", double fontSize = VariablesGlobal.TEXT_SIZE_MEDIUM)
+        public static Label NewLabelString(string text = "", string fontSize = VariablesGlobal.TEXT_SIZE_MEDIUM)
         {
-            Label label = new Label
-            {
-                Text = text,
-                FontSize = fontSize,
-            };
+            Label label = new Label { Text = text };
+            label.FontSize = FontSizes.DeviceNamedFontSize(fontSize, label);
 
             return label;
         }
 
-        public static Label NewLabelFormattedString(FormattedString formattedText, double fontSize = VariablesGlobal.TEXT_SIZE_MEDIUM)
+        public static Label NewLabelFormattedString(FormattedString formattedText, string fontSize = VariablesGlobal.TEXT_SIZE_MEDIUM)
         {
-            Label label = new Label
-            {
-                FormattedText = formattedText,
-                FontSize = fontSize,
-            };
+            Label label = new Label { FormattedText = formattedText };
+            label.FontSize = FontSizes.DeviceNamedFontSize(fontSize, label);
 
             return label;
         }
