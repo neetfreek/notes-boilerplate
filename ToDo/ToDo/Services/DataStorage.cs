@@ -12,30 +12,37 @@ namespace ToDo.Services
     {
         public static async void WriteToFileAsync(string fileName, string contents = "")
         {
-            IFile fileSave = await GetDataFileAsync();
-            await fileSave.WriteAllTextAsync(contents);
-        }
-
-        public static async Task<string> ReadFromFileAsync()
-        {
-            string content = "";
-            IFile fileSave = await GetDataFileAsync();
-            content = await fileSave.ReadAllTextAsync();
-
-            return content;
-        }
-
-        private static async Task<IFile> GetDataFileAsync()
-        {
             IFolder rootFolder = FileSystem.Current.LocalStorage;
+            IFolder dataFolder = await rootFolder.CreateFolderAsync(VariablesGlobal.NAME_FOLDER_DATA, CreationCollisionOption.OpenIfExists);
+            IFile dataFile = await dataFolder.CreateFileAsync(VariablesGlobal.NAME_FILE_DATA, CreationCollisionOption.ReplaceExisting);
 
-            IFolder folder = await rootFolder.CreateFolderAsync(VariablesGlobal.NAME_FOLDER_DATA, CreationCollisionOption.OpenIfExists);
-            IFile fileSave = await rootFolder.CreateFileAsync(VariablesGlobal.NAME_FILE_DATA, CreationCollisionOption.ReplaceExisting);
-
-            return fileSave;
+            await dataFile.WriteAllTextAsync(contents);
         }
 
-        private static async void DeleteFileAsync(string fileName, IFolder rootFolder = null)
+        public static async Task<string> ReadFromFileAsync(string fileName)
+        {
+            string contents = "";
+
+            IFolder rootFolder = FileSystem.Current.LocalStorage;
+            IFolder folder = rootFolder ?? FileSystem.Current.LocalStorage;
+
+            ExistenceCheckResult dataFolderExists = await folder.CheckExistsAsync(VariablesGlobal.NAME_FOLDER_DATA);
+            if (dataFolderExists == ExistenceCheckResult.FolderExists)
+            {
+                IFolder dataFolder = await rootFolder.GetFolderAsync(VariablesGlobal.NAME_FOLDER_DATA);
+
+                ExistenceCheckResult fileExists = await dataFolder.CheckExistsAsync(fileName);
+                if (fileExists == ExistenceCheckResult.FileExists)
+                {
+                    IFile dataFile = await dataFolder.GetFileAsync(fileName);
+                    contents = await dataFile.ReadAllTextAsync();
+                }
+            }
+
+            return contents;
+        }
+
+        public static async void DeleteFileAsync(string fileName, IFolder rootFolder = null)
         {
             if (await CheckFileExistsAsync(fileName))
             {
@@ -44,15 +51,22 @@ namespace ToDo.Services
             }
         }
 
+
         private static async Task<bool> CheckFileExistsAsync(string fileName)
         {
             IFolder rootFolder = FileSystem.Current.LocalStorage;
-
             IFolder folder = rootFolder ?? FileSystem.Current.LocalStorage;
-            ExistenceCheckResult fileExists = await folder.CheckExistsAsync(fileName);
-            if (fileExists == ExistenceCheckResult.FileExists)
+
+            ExistenceCheckResult dataFolderExists = await folder.CheckExistsAsync(VariablesGlobal.NAME_FOLDER_DATA);
+            if (dataFolderExists == ExistenceCheckResult.FolderExists)
             {
-                return true;
+                IFolder dataFolder = await rootFolder.GetFolderAsync(VariablesGlobal.NAME_FOLDER_DATA);
+
+                ExistenceCheckResult fileExists = await dataFolder.CheckExistsAsync(fileName);
+                if (fileExists == ExistenceCheckResult.FileExists)
+                {
+                    return true;
+                }
             }
 
             return false;
