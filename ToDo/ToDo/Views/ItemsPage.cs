@@ -38,10 +38,10 @@ namespace ToDo.Views
                     }),
                 };
                 StackLayout stackLayout = LayoutMaker.NewStackLayout();
-                stackLayout.Children.Add(ViewMaker.NewLabel(VariablesTexts.LABEL_HEADER_TEXT));
-                stackLayout.Children.Add(ViewMaker.NewLabel(item.Description));
-                stackLayout.Children.Add(ViewMaker.NewLabel(VariablesTexts.LABEL_HEADER_DESCRIPTION));
-                stackLayout.Children.Add(ViewMaker.NewLabel(item.Text));
+                stackLayout.Children.Add(ViewMaker.NewLabelString(VariablesTexts.LABEL_HEADER_TEXT));
+                stackLayout.Children.Add(ViewMaker.NewLabelString(item.Description));
+                stackLayout.Children.Add(ViewMaker.NewLabelString(VariablesTexts.LABEL_HEADER_DESCRIPTION));
+                stackLayout.Children.Add(ViewMaker.NewLabelString(item.Text));
                 stackLayout.Children.Add(button);
 
                 stackLayoutView.Children.Add(stackLayout);
