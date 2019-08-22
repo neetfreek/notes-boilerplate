@@ -9,6 +9,12 @@ namespace ToDo.Views
     {
         public ItemDetailPage(ItemDetailViewModel viewModel)
         {
+            PageLayout(viewModel);
+        }
+
+
+        private void PageLayout(ItemDetailViewModel viewModel)
+        {
             Title = viewModel.Title;
 
             StackLayout stackLayout = LayoutMaker.NewStackLayout();

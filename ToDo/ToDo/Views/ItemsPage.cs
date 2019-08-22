@@ -20,25 +20,11 @@ namespace ToDo.Views
 
             ToolbarItems.Add(MenuItemMaker.NewToolbarItem(AddItem_Clicked, VariablesTexts.TOOLBAR_NAME_ADD, VariablesTexts.ICON_PATH_ADD));
 
-            PopulatePage();
+            PageLayout();
         }
 
-        async void AddItem_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PushModalAsync(new NavigationPage(new NewItemPage()));
-        }
 
-        protected override void OnAppearing()
-        {
-            base.OnAppearing();
-
-            if (viewModel.Items.Count == 0)
-                viewModel.LoadItemsCommand.Execute(null);
-
-            PopulatePage();
-        }
-
-        private void PopulatePage()
+        private void PageLayout()
         {
             StackLayout stackLayoutView = LayoutMaker.NewStackLayout();
 
@@ -61,6 +47,21 @@ namespace ToDo.Views
                 stackLayoutView.Children.Add(stackLayout);
             }
             Content = LayoutMaker.NewScrollView(stackLayoutView);
+        }
+
+        async void AddItem_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushModalAsync(new NavigationPage(new NewItemPage()));
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
+            if (viewModel.Items.Count == 0)
+                viewModel.LoadItemsCommand.Execute(null);
+
+            PageLayout();
         }
     }
 }

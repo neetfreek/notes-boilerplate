@@ -12,6 +12,12 @@ namespace ToDo.Views
         
         public NewItemPage()
         {
+            PageLayout();
+        }
+
+
+        private void PageLayout()
+        {
             Title = VariablesTexts.TOOLBAR_NAME_ADD;
 
             StackLayout stackLayout = LayoutMaker.NewStackLayout();
