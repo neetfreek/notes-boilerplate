@@ -38,7 +38,7 @@ namespace ToDo.Views
             contentStackLayout.Children.Add(AppDetailsLabel());
             contentStackLayout.Children.Add(AppInformationLabel());
             contentStackLayout.Children.Add(AppTextLabel());
-            contentStackLayout.Children.Add(ViewMaker.NewButtonICommand(viewModel.OpenWebCommand, "Learn more"));
+            contentStackLayout.Children.Add(ViewMaker.NewButtonICommand(viewModel.OpenWebCommand, VariablesTexts.BUTTON_LEARN_MORE));
             // Add content to grid
             grid.Children.Add(stackLayout, 0, 0);
             grid.Children.Add(LayoutMaker.NewScrollView(contentStackLayout), 0, 1);
@@ -51,9 +51,9 @@ namespace ToDo.Views
             FormattedString appDetailsStrings = ElementMaker.NewFormattedString(3);
             Label appDetails = ViewMaker.NewLabelFormattedString(appDetailsStrings, VariablesGlobal.TEXT_SIZE_LARGE);
 
-            appDetailsStrings.Spans[0] = ElementMaker.NewSpan("ToDo", VariablesGlobal.TEXT_SIZE_LARGE, FontAttributes.Bold);
-            appDetailsStrings.Spans[1] = ElementMaker.NewSpan(" ");
-            appDetailsStrings.Spans[2] = ElementMaker.NewSpan("1.0", VariablesGlobal.TEXT_SIZE_MEDIUM, FontAttributes.None, VariablesGlobal.COLOUR_TEXT_LIGHT);
+            appDetailsStrings.Spans[0] = ElementMaker.NewSpan(VariablesTexts.APPLICATION_NAME, VariablesGlobal.TEXT_SIZE_LARGE, FontAttributes.Bold);
+            appDetailsStrings.Spans[1] = ElementMaker.NewSpan(VariablesTexts.TEXT_SPACE);
+            appDetailsStrings.Spans[2] = ElementMaker.NewSpan(VariablesTexts.APPLICATION_VERSION, VariablesGlobal.TEXT_SIZE_MEDIUM, FontAttributes.None, VariablesGlobal.COLOUR_TEXT_LIGHT);
             appDetailsStrings.Spans[2].ForegroundColor = Color.FromHex(VariablesGlobal.COLOUR_TEXT_LIGHT);
 
             return appDetails;
@@ -63,11 +63,11 @@ namespace ToDo.Views
             FormattedString appDetailsStrings = ElementMaker.NewFormattedString(4);
             Label appDetails = ViewMaker.NewLabelFormattedString(appDetailsStrings, VariablesGlobal.TEXT_SIZE_LARGE);
 
-            appDetailsStrings.Spans[0] = ElementMaker.NewSpan("This app is written in C# and native APIs using the");
-            appDetailsStrings.Spans[1] = ElementMaker.NewSpan(" ");
-            appDetailsStrings.Spans[2] = ElementMaker.NewSpan("Xamarin Platform", VariablesGlobal.TEXT_SIZE_MEDIUM, FontAttributes.Bold);
+            appDetailsStrings.Spans[0] = ElementMaker.NewSpan(VariablesTexts.ABOUT_CONTENT_INFO_1_4);
+            appDetailsStrings.Spans[1] = ElementMaker.NewSpan(VariablesTexts.TEXT_SPACE);
+            appDetailsStrings.Spans[2] = ElementMaker.NewSpan(VariablesTexts.ABOUT_CONTENT_INFO_2_4, VariablesGlobal.TEXT_SIZE_MEDIUM, FontAttributes.Bold);
             appDetailsStrings.Spans[2].ForegroundColor = Color.FromHex(VariablesGlobal.COLOUR_TEXT_LIGHT);
-            appDetailsStrings.Spans[3] = ElementMaker.NewSpan(".");
+            appDetailsStrings.Spans[3] = ElementMaker.NewSpan(VariablesTexts.TEXT_PERIOD);
 
             return appDetails;
         }
@@ -76,11 +76,11 @@ namespace ToDo.Views
             FormattedString appDetailsStrings = ElementMaker.NewFormattedString(4);
             Label appDetails = ViewMaker.NewLabelFormattedString(appDetailsStrings, VariablesGlobal.TEXT_SIZE_MEDIUM);
 
-            appDetailsStrings.Spans[0] = ElementMaker.NewSpan("It shares code with its");
-            appDetailsStrings.Spans[1] = ElementMaker.NewSpan(" ");
-            appDetailsStrings.Spans[2] = ElementMaker.NewSpan("iOS, Android, and Windows", VariablesGlobal.TEXT_SIZE_LARGE, FontAttributes.Bold);
+            appDetailsStrings.Spans[0] = ElementMaker.NewSpan(VariablesTexts.ABOUT_CONTENT_INFO_3_4);
+            appDetailsStrings.Spans[1] = ElementMaker.NewSpan(VariablesTexts.TEXT_SPACE);
+            appDetailsStrings.Spans[2] = ElementMaker.NewSpan(VariablesTexts.ABOUT_CONTENT_INFO_4_4, VariablesGlobal.TEXT_SIZE_LARGE, FontAttributes.Bold);
             appDetailsStrings.Spans[2].ForegroundColor = Color.FromHex(VariablesGlobal.COLOUR_TEXT_LIGHT);
-            appDetailsStrings.Spans[3] = ElementMaker.NewSpan(".");
+            appDetailsStrings.Spans[3] = ElementMaker.NewSpan(VariablesTexts.TEXT_PERIOD);
 
             return appDetails;
         }
