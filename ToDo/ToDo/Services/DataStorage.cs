@@ -8,20 +8,34 @@ using PCLStorage;
 
 namespace ToDo.Services
 {
-    class DataStorage
+    public class DataStorage
     {
-        IFolder rootFolder = FileSystem.Current.LocalStorage;
-
-
-        private async Task<IFile> GetDataFileAsync()
+        public static async void WriteToFileAsync(string fileName, string contents = "")
         {
-            IFolder folder = await rootFolder.CreateFolderAsync("ToDoDataFolder", CreationCollisionOption.OpenIfExists);
-            IFile fileSave = await rootFolder.CreateFileAsync("todoDateFile", CreationCollisionOption.ReplaceExisting);
+            IFile fileSave = await GetDataFileAsync();
+            await fileSave.WriteAllTextAsync(contents);
+        }
+
+        public static async Task<string> ReadFromFileAsync()
+        {
+            string content = "";
+            IFile fileSave = await GetDataFileAsync();
+            content = await fileSave.ReadAllTextAsync();
+
+            return content;
+        }
+
+        private static async Task<IFile> GetDataFileAsync()
+        {
+            IFolder rootFolder = FileSystem.Current.LocalStorage;
+
+            IFolder folder = await rootFolder.CreateFolderAsync(VariablesGlobal.NAME_FOLDER_DATA, CreationCollisionOption.OpenIfExists);
+            IFile fileSave = await rootFolder.CreateFileAsync(VariablesGlobal.NAME_FILE_DATA, CreationCollisionOption.ReplaceExisting);
 
             return fileSave;
         }
 
-        private async void DeleteFileAsync(string fileName, IFolder rootFolder = null)
+        private static async void DeleteFileAsync(string fileName, IFolder rootFolder = null)
         {
             if (await CheckFileExistsAsync(fileName))
             {
@@ -30,8 +44,10 @@ namespace ToDo.Services
             }
         }
 
-        private async Task<bool> CheckFileExistsAsync(string fileName)
+        private static async Task<bool> CheckFileExistsAsync(string fileName)
         {
+            IFolder rootFolder = FileSystem.Current.LocalStorage;
+
             IFolder folder = rootFolder ?? FileSystem.Current.LocalStorage;
             ExistenceCheckResult fileExists = await folder.CheckExistsAsync(fileName);
             if (fileExists == ExistenceCheckResult.FileExists)
@@ -41,4 +57,5 @@ namespace ToDo.Services
 
             return false;
         }
-
+    }
+}
