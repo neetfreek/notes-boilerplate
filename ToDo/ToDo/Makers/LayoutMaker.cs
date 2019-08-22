@@ -38,15 +38,14 @@ namespace ToDo.Makers
             return gridAdjusted;
         }
 
-        public static ScrollView NewScrollView(View view)
+        public static ScrollView NewScrollView(View view, Thickness padding = new Thickness (), int spacing = 0)
         {
             ScrollView scrollView = new ScrollView() { Content = view };
 
             return scrollView;
         }
 
-        public static StackLayout NewStackLayout(Thickness padding, double spacing = VariablesGlobal.SPACING_DEFAULT, EventHandler onClick = null,
-            string backgroundColor = "")
+        public static StackLayout NewStackLayout(Thickness padding = new Thickness(), double spacing = VariablesGlobal.SPACING_DEFAULT, EventHandler onClick = null, string backgroundColor = "")
         {
             StackLayout stackLayout = new StackLayout
             {
