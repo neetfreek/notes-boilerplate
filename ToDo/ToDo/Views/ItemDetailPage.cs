@@ -17,7 +17,7 @@ namespace ToDo.Views
         {
             Title = viewModel.Title;
 
-            StackLayout stackLayout = LayoutMaker.NewStackLayout();
+            StackLayout stackLayout = LayoutMaker.NewStackLayout(new Thickness(0, 0, 0, 0));
 
             stackLayout.Children.Add(ViewMaker.NewLabelString(VariablesTexts.LABEL_HEADER_TEXT, VariablesGlobal.TEXT_SIZE_LARGE));
             stackLayout.Children.Add(ViewMaker.NewLabelString(viewModel.Item.Text));

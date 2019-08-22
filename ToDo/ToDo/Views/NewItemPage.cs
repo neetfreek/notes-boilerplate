@@ -20,7 +20,7 @@ namespace ToDo.Views
         {
             Title = VariablesTexts.TOOLBAR_NAME_ADD;
 
-            StackLayout stackLayout = LayoutMaker.NewStackLayout();
+            StackLayout stackLayout = LayoutMaker.NewStackLayout(new Thickness(0, 0, 0, 0));
             entryText = InputViewMaker.NewEntry();
             editorDescription = InputViewMaker.NewEditor();
 

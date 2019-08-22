@@ -45,7 +45,8 @@ namespace ToDo.Makers
             return scrollView;
         }
 
-        public static StackLayout NewStackLayout(double padding = VariablesGlobal.PADDING_DEFAULT, double spacing = VariablesGlobal.SPACING_DEFAULT, EventHandler onClick = null)
+        public static StackLayout NewStackLayout(Thickness padding, double spacing = VariablesGlobal.SPACING_DEFAULT, EventHandler onClick = null,
+            string backgroundColor = "")
         {
             StackLayout stackLayout = new StackLayout
             {

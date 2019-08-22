@@ -26,7 +26,7 @@ namespace ToDo.Views
 
         private void PageLayout()
         {
-            StackLayout stackLayoutView = LayoutMaker.NewStackLayout();
+            StackLayout stackLayoutView = LayoutMaker.NewStackLayout(new Thickness(0, 0, 0, 0));
 
             foreach (Item item in viewModel.Items)
             {
@@ -37,7 +37,7 @@ namespace ToDo.Views
                         Navigation.PushAsync(new ItemDetailPage(new ItemDetailViewModel(item)));
                     }),
                 };
-                StackLayout stackLayout = LayoutMaker.NewStackLayout();
+                StackLayout stackLayout = LayoutMaker.NewStackLayout(new Thickness(0, 0, 0, 0));
                 stackLayout.Children.Add(ViewMaker.NewLabelString(VariablesTexts.LABEL_HEADER_TEXT));
                 stackLayout.Children.Add(ViewMaker.NewLabelString(item.Description));
                 stackLayout.Children.Add(ViewMaker.NewLabelString(VariablesTexts.LABEL_HEADER_DESCRIPTION));
