@@ -4,12 +4,24 @@
 * These objects are used to place layouts and controls on the screen.               *
 * https://docs.microsoft.com/en-us/dotnet/api/xamarin.forms.view?view=xamarin-forms *
 *************************************************************************************/
+using System.Windows.Input;
 using Xamarin.Forms;
 
 namespace ToDo.Makers
 {
     public static class ViewMaker
     {
+        public static Button NewButtonICommand(ICommand command, string text = "")
+        {
+            Button button = new Button()
+            {
+                Command = command,
+                Text = text,
+            };
+
+            return button;
+        }
+
         public static ContentView NewContentView(Thickness padding, View content = null)
         {
             ContentView contentView = new ContentView()
@@ -44,11 +56,22 @@ namespace ToDo.Makers
             return image;
         }
 
-        public static Label NewLabel(string text = "", double fontSize = VariablesGlobal.TEXT_SIZE_MEDIUM)
+        public static Label NewLabelString(string text = "", double fontSize = VariablesGlobal.TEXT_SIZE_MEDIUM)
         {
             Label label = new Label
             {
                 Text = text,
+                FontSize = fontSize,
+            };
+
+            return label;
+        }
+
+        public static Label NewLabelFormattedString(FormattedString formattedText, double fontSize = VariablesGlobal.TEXT_SIZE_MEDIUM)
+        {
+            Label label = new Label
+            {
+                FormattedText = formattedText,
                 FontSize = fontSize,
             };
 
