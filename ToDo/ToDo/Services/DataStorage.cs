@@ -13,9 +13,10 @@ namespace ToDo.Services
         IFolder rootFolder = FileSystem.Current.LocalStorage;
 
 
-        private async Task<IFile> CreateFileAsync()
+        private async Task<IFile> GetDataFileAsync()
         {
-            IFile fileSave = await rootFolder.CreateFileAsync("todoNotes", CreationCollisionOption.ReplaceExisting);
+            IFolder folder = await rootFolder.CreateFolderAsync("ToDoDataFolder", CreationCollisionOption.OpenIfExists);
+            IFile fileSave = await rootFolder.CreateFileAsync("todoDateFile", CreationCollisionOption.ReplaceExisting);
 
             return fileSave;
         }
