@@ -54,15 +54,7 @@ namespace ToDo.Makers
                 Padding = padding,
                 GestureRecognizers = { new TapGestureRecognizer(), },                                
             };
-
-            if (!Validation.HexCodeValid(backgroundColor))
-            {
-                stackLayout.BackgroundColor = Color.Default;
-            }
-            else
-            {
-                stackLayout.BackgroundColor = Color.FromHex(backgroundColor);
-            }
+            stackLayout.BackgroundColor = Validation.ValidateHexCode(backgroundColor);
 
             return stackLayout;
         }
