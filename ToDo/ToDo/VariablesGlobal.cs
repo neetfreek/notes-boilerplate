@@ -12,5 +12,11 @@ namespace ToDo
 
         public const double PADDING_DEFAULT = 15;
         public const double SPACING_DEFAULT = 20;
+
+        // Colours (Hex codes)
+        public const string COLOUR_PRIMARY = "#2196F3";
+        public const string COLOUR_ACCENT = "#96d1ff";
+        public const string COLOUR_TEXT_LIGHT = "#999999";
+
     }
 }
