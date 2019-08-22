@@ -42,12 +42,22 @@ namespace ToDo.Services
             return contents;
         }
 
-        public static async void DeleteFileAsync(string fileName, IFolder rootFolder = null)
+        public static async void DeleteFileAsync(string fileName)
         {
-            if (await CheckFileExistsAsync(fileName))
+            IFolder rootFolder = FileSystem.Current.LocalStorage;
+            IFolder folder = rootFolder ?? FileSystem.Current.LocalStorage;
+
+            ExistenceCheckResult dataFolderExists = await folder.CheckExistsAsync(VariablesGlobal.NAME_FOLDER_DATA);
+            if (dataFolderExists == ExistenceCheckResult.FolderExists)
             {
-                IFile fileToDelete = await rootFolder.GetFileAsync(fileName);
-                await fileToDelete.DeleteAsync();
+                IFolder dataFolder = await rootFolder.GetFolderAsync(VariablesGlobal.NAME_FOLDER_DATA);
+
+                ExistenceCheckResult fileExists = await dataFolder.CheckExistsAsync(fileName);
+                if (fileExists == ExistenceCheckResult.FileExists)
+                {
+                    IFile dataFile = await dataFolder.GetFileAsync(fileName);
+                    await dataFile.DeleteAsync();
+                }
             }
         }
 
