@@ -10,6 +10,22 @@ namespace ToDo.Makers
 {
     public static class ElementMaker
     {
+        public static FormattedString NewFormattedString(int amountSpans)
+        {
+            int amountSpansToAdd = amountSpans;
+
+            FormattedString formattedString = new FormattedString()
+            {
+            };
+            while (amountSpansToAdd > 0)
+            {
+                formattedString.Spans.Add(new Span());
+                amountSpansToAdd--;
+            }
+
+            return formattedString;
+        }
+
         public static ViewCell NewViewCell(View view)
         {
             ViewCell viewCell = new ViewCell()
@@ -31,6 +47,18 @@ namespace ToDo.Makers
             };
 
             return navigationPage;
+        }
+
+        public static Span NewSpan(string text = "", double fontSize = VariablesGlobal.TEXT_SIZE_MEDIUM, FontAttributes fontAttributes = FontAttributes.None)
+        {
+            Span span = new Span
+            {
+                Text = text,
+                FontSize = fontSize,
+                FontAttributes = fontAttributes,
+            };
+
+            return span;
         }
     }
 }
