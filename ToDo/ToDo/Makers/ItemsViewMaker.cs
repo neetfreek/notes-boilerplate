@@ -11,10 +11,7 @@ namespace ToDo.Makers
     {
         public static ListView NewListView(DataTemplate dataTemplate)
         {
-            ListView listView = new ListView()
-            {
-                ItemTemplate = dataTemplate,
-            };
+            ListView listView = new ListView() { ItemTemplate = dataTemplate };
 
             return listView;
         }

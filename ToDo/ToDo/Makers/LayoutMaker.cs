@@ -13,9 +13,7 @@ namespace ToDo.Makers
     {
         public static Grid NewGrid(int amountRows = 1, int amountColumns = 1)
         {
-            Grid grid = new Grid()
-            {
-            };
+            Grid grid = new Grid() { };
             grid = AddGridRowsColumns(grid, amountRows, amountColumns);
 
             return grid;
@@ -28,12 +26,12 @@ namespace ToDo.Makers
 
             while (rowsToAdd > 0)
             {
-                gridAdjusted.RowDefinitions.Add(new RowDefinition {Height = GridLength.Auto});
+                gridAdjusted.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
                 rowsToAdd--;
             }
             while (columnsToAdd > 0)
             {
-                gridAdjusted.ColumnDefinitions.Add(new ColumnDefinition{Width = GridLength.Auto});
+                gridAdjusted.ColumnDefinitions.Add(new ColumnDefinition{ Width = GridLength.Auto });
                 columnsToAdd--;
             }
 
@@ -42,10 +40,7 @@ namespace ToDo.Makers
 
         public static ScrollView NewScrollView(View view)
         {
-            ScrollView scrollView = new ScrollView()
-            {
-                Content = view,
-            };
+            ScrollView scrollView = new ScrollView() { Content = view };
 
             return scrollView;
         }
@@ -56,10 +51,7 @@ namespace ToDo.Makers
             {
                 Spacing = spacing,
                 Padding = padding,
-                GestureRecognizers =
-                {
-                    new TapGestureRecognizer(),
-                },                                
+                GestureRecognizers = { new TapGestureRecognizer(), },                                
             };
 
             return stackLayout;

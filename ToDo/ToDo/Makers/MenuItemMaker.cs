@@ -15,10 +15,7 @@ namespace ToDo.Makers
     {
         public static ToolbarItem NewToolbarItem(EventHandler onClick, string text = "", string iconImageSource = "")
         {
-            ToolbarItem toolbarItem = new ToolbarItem
-            {
-                Text = text,
-            };
+            ToolbarItem toolbarItem = new ToolbarItem { Text = text };
             toolbarItem.Clicked += onClick;
             toolbarItem.IconImageSource = iconImageSource;
 

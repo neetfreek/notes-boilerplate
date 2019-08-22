@@ -14,9 +14,7 @@ namespace ToDo.Makers
         {
             int amountSpansToAdd = amountSpans;
 
-            FormattedString formattedString = new FormattedString()
-            {
-            };
+            FormattedString formattedString = new FormattedString() { };
             while (amountSpansToAdd > 0)
             {
                 formattedString.Spans.Add(new Span());
@@ -28,10 +26,7 @@ namespace ToDo.Makers
 
         public static ViewCell NewViewCell(View view)
         {
-            ViewCell viewCell = new ViewCell()
-            {
-                View = view,
-            };            
+            ViewCell viewCell = new ViewCell() { View = view };            
 
             return viewCell;
         }
