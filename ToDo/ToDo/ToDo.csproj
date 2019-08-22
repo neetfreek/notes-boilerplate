@@ -11,6 +11,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="PCLStorage" Version="1.0.2" />
     <PackageReference Include="Xamarin.Forms" Version="4.2.0.709249" />  
   </ItemGroup>
 </Project>
