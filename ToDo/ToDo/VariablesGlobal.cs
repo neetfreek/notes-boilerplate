@@ -24,5 +24,14 @@ namespace ToDo
         public const string COLOUR_ACCENT = "#96d1ff";
         public const string COLOUR_TEXT_LIGHT = "#999999";
 
+        // Images
+        public const string IMAGE_XAMARIN_LOGO = "xamarin_logo.png";
+        public const string IMAGE_ADD = "icon_add.png";
+        public const string IMAGE_INFO = "icon_info.png";
+        public const string IMAGE_MENU = "icon_menu.png";
+
+        // Data
+        public const string NAME_FOLDER_DATA = "ToDoDataFolder";
+        public const string NAME_FILE_DATA = "todoDateFile";
     }
 }

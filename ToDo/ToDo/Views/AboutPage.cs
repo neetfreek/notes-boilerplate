@@ -29,7 +29,7 @@ namespace ToDo.Views
             stackLayout.VerticalOptions = LayoutOptions.FillAndExpand;
             stackLayout.HorizontalOptions = LayoutOptions.Fill;
             ContentView contentView = ViewMaker.NewContentView(new Thickness(0, 40, 0, 40),
-                ViewMaker.NewImageByHeight("xamarin_logo.png", LayoutOptions.Center, 64));
+                ViewMaker.NewImageByHeight(VariablesGlobal.IMAGE_XAMARIN_LOGO, LayoutOptions.Center, 64));
             contentView.VerticalOptions = LayoutOptions.FillAndExpand;
             stackLayout.Children.Add(contentView);
             // ScrollView StackLayout

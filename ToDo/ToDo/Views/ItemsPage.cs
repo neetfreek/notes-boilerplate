@@ -18,7 +18,7 @@ namespace ToDo.Views
 
             this.viewModel = viewModel;
 
-            ToolbarItems.Add(MenuItemMaker.NewToolbarItem(AddItem_Clicked, VariablesTexts.TOOLBAR_NAME_ADD, VariablesTexts.ICON_PATH_ADD));
+            ToolbarItems.Add(MenuItemMaker.NewToolbarItem(AddItem_Clicked, VariablesTexts.TOOLBAR_NAME_ADD, VariablesGlobal.IMAGE_ADD));
 
             PageLayout();
         }

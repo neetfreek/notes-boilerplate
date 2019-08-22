@@ -30,10 +30,5 @@ namespace ToDo
         public const string PAGE_NAME_ITEMS = "Home";
 
         public const string MESSAGE_ADDITEM = "AddItem";
-
-        // Image resource paths
-        public const string ICON_PATH_ADD = "icon_add.png";
-        public const string ICON_PATH_INFO = "icon_info.png";
-        public const string ICON_PATH_MENU = "icon_menu.png";
     }
 }
