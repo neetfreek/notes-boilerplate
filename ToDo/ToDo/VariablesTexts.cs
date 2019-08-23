@@ -11,7 +11,7 @@ namespace ToDo
         public const string BUTTON_NAME_VIEW = "View";
         public const string BUTTON_LEARN_MORE = "Learn more";
 
-        public const string LABEL_HEADER_TEXT = "Text";
+        public const string LABEL_HEADER_TEXT = "Name";
         public const string LABEL_HEADER_DESCRIPTION = "Description";
 
         public const string TOOLBAR_NAME_ADD = "Add";

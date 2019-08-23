@@ -7,8 +7,8 @@ namespace ToDo.Views
 {
     class NewItemPage : ContentPage
     {
-        private Entry entryText = new Entry();
-        private Editor editorDescription = new Editor();
+        private Entry entryName = new Entry();
+        private Editor editorText = new Editor();
         
         public NewItemPage()
         {
@@ -21,13 +21,13 @@ namespace ToDo.Views
             Title = VariablesTexts.TOOLBAR_NAME_ADD;
 
             StackLayout stackLayout = LayoutMaker.NewStackLayout(new Thickness(0, 0, 0, 0));
-            entryText = InputViewMaker.NewEntry();
-            editorDescription = InputViewMaker.NewEditor();
+            entryName = InputViewMaker.NewEntry();
+            editorText = InputViewMaker.NewEditor();
 
             stackLayout.Children.Add(ViewMaker.NewLabelString(VariablesTexts.LABEL_HEADER_TEXT, VariablesGlobal.TEXT_SIZE_LARGE));
-            stackLayout.Children.Add(entryText);
+            stackLayout.Children.Add(entryName);
             stackLayout.Children.Add(ViewMaker.NewLabelString(VariablesTexts.LABEL_HEADER_DESCRIPTION, VariablesGlobal.TEXT_SIZE_LARGE));
-            stackLayout.Children.Add(editorDescription);
+            stackLayout.Children.Add(editorText);
 
             ToolbarItems.Add(MenuItemMaker.NewToolbarItem(Save_Clicked, VariablesTexts.TOOLBAR_NAME_SAVE));
             Content = stackLayout;
@@ -37,8 +37,8 @@ namespace ToDo.Views
         {
             Item item = new Item
             {
-                Text = entryText.Text,
-                Description = editorDescription.Text,
+                Name = entryName.Text,
+                Text = editorText.Text,
             };
 
             MessagingCenter.Send(this, VariablesTexts.MESSAGE_ADDITEM, item);
