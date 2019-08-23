@@ -41,7 +41,7 @@ namespace ToDo.Views
                 Text = editorText.Text,
             };
 
-            MessagingCenter.Send(this, VariablesTexts.MESSAGE_ADDITEM, item);
+            MessagingCenter.Send(this, VariablesTexts.MESSAGE_ADD_ITEM, item);
             await Navigation.PopModalAsync();
         }
     }

@@ -29,6 +29,6 @@ namespace ToDo
         public const string PAGE_NAME_ABOUT = "About";
         public const string PAGE_NAME_ITEMS = "Home";
 
-        public const string MESSAGE_ADDITEM = "AddItem";
+        public const string MESSAGE_ADD_ITEM = "AddItem";
     }
 }
