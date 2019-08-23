@@ -10,7 +10,7 @@ namespace ToDo.Services
 {
     public class DataStorage
     {
-        public static async void WriteToFileAsync(string fileName, string contents = "")
+        public static async Task WriteToFileAsync(string fileName, string contents = "")
         {
             IFolder rootFolder = FileSystem.Current.LocalStorage;
             IFolder dataFolder = await rootFolder.CreateFolderAsync(VariablesGlobal.NAME_FOLDER_DATA, CreationCollisionOption.OpenIfExists);
