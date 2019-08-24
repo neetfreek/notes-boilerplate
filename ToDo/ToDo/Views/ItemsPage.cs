@@ -48,11 +48,12 @@ namespace ToDo.Views
 
                 stackLayoutView.Children.Add(stackLayout);
             }
+
             Content = LayoutMaker.NewScrollView(stackLayoutView);
         }
 
-        async void AddItem_Clicked(object sender, EventArgs e)
         // EvenHandler for TOOLBAR_NAME_ADD object clicks, navigate to NewItemPage view
+        private async void AddItem_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushModalAsync(new NavigationPage(new NewItemPage()));
         }
