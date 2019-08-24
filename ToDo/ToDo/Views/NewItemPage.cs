@@ -16,6 +16,7 @@ namespace ToDo.Views
         }
 
 
+        // Set up NewItemPage UI layout
         private void PageLayout()
         {
             Title = VariablesTexts.TOOLBAR_NAME_ADD;
@@ -33,6 +34,7 @@ namespace ToDo.Views
             Content = stackLayout;
         }
 
+        // EvenHandler for TOOLBAR_NAME_SAVE object clicks, instantiate new Item object, send MESSAGE_ADD_ITEM message, Pop page away to display MainPage view
         private async void Save_Clicked(object sender, EventArgs e)
         {
             Item item = new Item

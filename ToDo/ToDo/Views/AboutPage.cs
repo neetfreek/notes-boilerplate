@@ -16,6 +16,7 @@ namespace ToDo.Views
         }
 
 
+        // Set up AboutPage UI
         private void PageLayout()
         {
             Title = VariablesTexts.PAGE_NAME_ABOUT;

@@ -13,6 +13,7 @@ namespace ToDo.Views
         }
 
 
+        // Set up ItemDetailPage UI
         private void PageLayout(ItemDetailViewModel viewModel)
         {
             Title = viewModel.Title;

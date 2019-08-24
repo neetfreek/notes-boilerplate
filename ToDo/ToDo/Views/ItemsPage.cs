@@ -52,6 +52,7 @@ namespace ToDo.Views
         }
 
         async void AddItem_Clicked(object sender, EventArgs e)
+        // EvenHandler for TOOLBAR_NAME_ADD object clicks, navigate to NewItemPage view
         {
             await Navigation.PushModalAsync(new NavigationPage(new NewItemPage()));
         }
