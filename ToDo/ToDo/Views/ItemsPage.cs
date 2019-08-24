@@ -3,7 +3,6 @@ using Xamarin.Forms;
 
 using ToDo.Models;
 using ToDo.ViewModels;
-
 using ToDo.Makers;
 
 namespace ToDo.Views
@@ -13,22 +12,25 @@ namespace ToDo.Views
         ItemsViewModel viewModel;
 
         public ItemsPage(ItemsViewModel viewModel)
-        {
-            Title = VariablesTexts.PAGE_NAME_ITEMS;
-
+        {            
             this.viewModel = viewModel;
-
+            Title = viewModel.Title;
             ToolbarItems.Add(MenuItemMaker.NewToolbarItem(AddItem_Clicked, VariablesTexts.TOOLBAR_NAME_ADD, VariablesGlobal.IMAGE_ADD));
 
-            PageLayout();
+            // Update ItemsPage UI once ExecuteLoadItemsCommand Task complete
+            MessagingCenter.Subscribe<ItemsViewModel>(this, VariablesTexts.MESSAGE_LOADED_ITEMS_EXECUTED, (sender) =>
+            {
+                PageLayout();
+            });            
         }
 
 
+        // Set up ItemsPage UI
         private void PageLayout()
         {
             StackLayout stackLayoutView = LayoutMaker.NewStackLayout(new Thickness(0, 0, 0, 0));
 
-            foreach (Item item in viewModel.Items)
+            foreach (Item item in viewModel.GetItems())
             {
                 Button button = new Button()
                 {
@@ -58,7 +60,7 @@ namespace ToDo.Views
         {
             base.OnAppearing();
 
-            if (viewModel.Items.Count == 0)
+            if (viewModel.GetItems().Count == 0)
                 viewModel.LoadItemsCommand.Execute(null);
 
             PageLayout();
