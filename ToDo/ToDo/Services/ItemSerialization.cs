@@ -14,14 +14,14 @@ namespace ToDo.Services
 {
     public static class ItemSerialization
     {
-        public async static void WriteAllData(ObservableCollection<Item> items)
+        // Write parameter ObservableCollection<Item> to NAME_FOLDER_DATA/NAME_FILE_DATA local storage in JSON string format
         public async static Task WriteAllData(ObservableCollection<Item> items)
         {
             string dataFinal = ItemsToString(items);
             await DataStorage.WriteToFileAsync(VariablesGlobal.NAME_FILE_DATA, dataFinal);
         }
 
-        public async static Task<ObservableCollection<Item>> ReadAllData(string fileName)
+        // Return parameter string local storage JSON string contents converted to List<Item>
         public async static Task<List<Item>> ReadAllData(string fileName)
         {
             string itemsString = await DataStorage.ReadFromFileAsync(fileName);
@@ -30,13 +30,13 @@ namespace ToDo.Services
             return StringsToItems(itemsString);
         }
 
-        public static ObservableCollection<Item> StringsToItems(string itemsString)
+
+        // Return List<Item> converted from string argument
         private static List<Item> StringsToItems(string itemsString)
         {
             string itemsAll = itemsString;
             List<string> listItemsString = new List<string>();
             int itemsAllLength = itemsAll.Length;
-            ObservableCollection<Item> items = new ObservableCollection<Item>();
             List<Item> items = new List<Item>();
 
             while (itemsAllLength > 0)
@@ -47,25 +47,24 @@ namespace ToDo.Services
                 itemsAll = itemsAll.Remove(0, (itemsAll.Substring(0, positionEndLine).Length) + 1);
                 itemsAllLength = itemsAll.Length;
             }
+
             return items;
         }
 
-
+        // Return string converted from ObservableCollection<Item> argument
         private static string ItemsToString(ObservableCollection<Item> items)
         {
-            string dataFinal = "";
             string itemsString = "";
 
             foreach (Item item in items)
             {
-                dataFinal += ItemToString(item) + Environment.NewLine;
                 itemsString += ItemToString(item) + Environment.NewLine;
             }
 
-            return dataFinal;
             return itemsString;
         }
 
+        // Return string converted from Item item argument
         private static string ItemToString(Item item)
         {
             MemoryStream stream = new MemoryStream();
@@ -79,6 +78,7 @@ namespace ToDo.Services
             return itemString;
         }
 
+        // Return Item converted from string argument
         private static Item StringToItem(string itemString)
         {
             Item item = new Item();
