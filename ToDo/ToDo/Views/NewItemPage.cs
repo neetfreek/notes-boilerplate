@@ -10,6 +10,7 @@ namespace ToDo.Views
         private Entry entryName = new Entry();
         private Editor editorText = new Editor();
         
+
         public NewItemPage()
         {
             PageLayout();
@@ -44,6 +45,7 @@ namespace ToDo.Views
             };
 
             MessagingCenter.Send(this, VariablesTexts.MESSAGE_ADD_ITEM, item);
+
             await Navigation.PopModalAsync();
         }
     }
