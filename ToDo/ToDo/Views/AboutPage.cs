@@ -15,11 +15,10 @@ namespace ToDo.Views
             PageLayout();
         }
 
-
         // Set up AboutPage UI
         private void PageLayout()
         {
-            Title = VariablesTexts.PAGE_NAME_ABOUT;
+            Title = viewModel.Title;
             // Gird
             Grid grid = LayoutMaker.NewGrid(2, 0);
             grid.RowDefinitions[0].Height = GridLength.Auto;
