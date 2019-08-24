@@ -9,6 +9,8 @@ namespace ToDo.Services
     public class MockDataStore : IDataStore<Item>
     {
         List<Item> items;
+        List<Item> items = new List<Item>();
+
 
         public MockDataStore()
         {
@@ -27,6 +29,9 @@ namespace ToDo.Services
             {
                 items.Add(item);
             }
+        private async void PopulateItemsCollectionFromDataFile()
+        {
+            items = await ItemSerialization.ReadAllData(VariablesGlobal.NAME_FILE_DATA);
         }
 
         public async Task<bool> AddItemAsync(Item item)
@@ -59,8 +64,10 @@ namespace ToDo.Services
         }
 
         public async Task<IEnumerable<Item>> GetItemsAsync(bool forceRefresh = false)
+        public async Task<IEnumerable<Item>> GetItemsFromFileAsync(bool forceRefresh = false)
         {
             return await Task.FromResult(items);
+            return await ItemSerialization.ReadAllData(VariablesGlobal.NAME_FILE_DATA);
         }
     }
 }

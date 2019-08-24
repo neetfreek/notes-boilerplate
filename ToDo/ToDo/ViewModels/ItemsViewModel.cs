@@ -25,6 +25,7 @@ namespace ToDo.ViewModels
             {
                 var newItem = item as Item;
                 Items.Add(newItem);
+                await ItemSerialization.WriteAllData(GetItems());
                 await DataStore.AddItemAsync(newItem);
             });
         }
