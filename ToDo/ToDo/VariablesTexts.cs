@@ -11,8 +11,8 @@ namespace ToDo
         public const string BUTTON_NAME_VIEW = "View";
         public const string BUTTON_LEARN_MORE = "Learn more";
 
-        public const string LABEL_HEADER_TEXT = "Name";
-        public const string LABEL_HEADER_DESCRIPTION = "Description";
+        public const string LABEL_ITEM_NAME = "Name";
+        public const string LABEL_ITEM_TEXT = "Description";
 
         public const string TOOLBAR_NAME_ADD = "Add";
         public const string TOOLBAR_NAME_SAVE = "Save";
@@ -30,5 +30,6 @@ namespace ToDo
         public const string PAGE_NAME_ITEMS = "Home";
 
         public const string MESSAGE_ADD_ITEM = "AddItem";
+        public const string MESSAGE_LOAD_ITEMS_EXECUTED = "LoadedItems";
     }
 }

@@ -66,7 +66,7 @@ namespace ToDo.ViewModels
             finally
             {
                 IsBusy = false;
-                MessagingCenter.Send(this, VariablesTexts.MESSAGE_LOADED_ITEMS_EXECUTED);
+                MessagingCenter.Send(this, VariablesTexts.MESSAGE_LOAD_ITEMS_EXECUTED);
             }
         }
     }

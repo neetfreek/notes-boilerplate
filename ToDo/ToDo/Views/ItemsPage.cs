@@ -18,7 +18,7 @@ namespace ToDo.Views
             ToolbarItems.Add(MenuItemMaker.NewToolbarItem(AddItem_Clicked, VariablesTexts.TOOLBAR_NAME_ADD, VariablesGlobal.IMAGE_ADD));
 
             // Update ItemsPage UI once ExecuteLoadItemsCommand Task complete
-            MessagingCenter.Subscribe<ItemsViewModel>(this, VariablesTexts.MESSAGE_LOADED_ITEMS_EXECUTED, (sender) =>
+            MessagingCenter.Subscribe<ItemsViewModel>(this, VariablesTexts.MESSAGE_LOAD_ITEMS_EXECUTED, (sender) =>
             {
                 PageLayout();
             });            
@@ -40,9 +40,9 @@ namespace ToDo.Views
                     }),
                 };
                 StackLayout stackLayout = LayoutMaker.NewStackLayout(new Thickness(0, 0, 0, 0));
-                stackLayout.Children.Add(ViewMaker.NewLabelString(VariablesTexts.LABEL_HEADER_TEXT));
-                stackLayout.Children.Add(ViewMaker.NewLabelString(item.Description));
-                stackLayout.Children.Add(ViewMaker.NewLabelString(VariablesTexts.LABEL_HEADER_DESCRIPTION));
+                stackLayout.Children.Add(ViewMaker.NewLabelString(VariablesTexts.LABEL_ITEM_NAME));
+                stackLayout.Children.Add(ViewMaker.NewLabelString(item.Name));
+                stackLayout.Children.Add(ViewMaker.NewLabelString(VariablesTexts.LABEL_ITEM_TEXT));
                 stackLayout.Children.Add(ViewMaker.NewLabelString(item.Text));
                 stackLayout.Children.Add(button);
 
