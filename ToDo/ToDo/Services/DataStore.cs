@@ -1,17 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using ToDo.Models;
 
 namespace ToDo.Services
 {
-    public class MockDataStore : IDataStore<Item>
+    public class DataStore : IDataStore<Item>
     {
         List<Item> items = new List<Item>();
 
 
-        public MockDataStore()
+        public DataStore()
         {
             PopulateItemsCollectionFromDataFile();
         }
