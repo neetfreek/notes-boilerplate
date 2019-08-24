@@ -30,7 +30,8 @@ namespace ToDo.ViewModels
             });
         }
 
-        async Task ExecuteLoadItemsCommand()
+        // Populate Items collection from local storage NAME_FOLDER_DATA, send MESSAGE_LOADED_ITEMS_EXECUTED on completion
+        private async Task ExecuteLoadItemsCommand()
         {
             if (IsBusy)
                 return;
@@ -39,9 +40,8 @@ namespace ToDo.ViewModels
 
             try
             {
-                Items.Clear();
-                var items = await DataStore.GetItemsAsync(true);
-                foreach (var item in items)
+                IEnumerable<Item> itemsToAdd = await DataStore.GetItemsFromFileAsync(true);
+                foreach (var item in itemsToAdd)
                 {
                     Items.Add(item);
                 }

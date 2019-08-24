@@ -8,27 +8,15 @@ namespace ToDo.Services
 {
     public class MockDataStore : IDataStore<Item>
     {
-        List<Item> items;
         List<Item> items = new List<Item>();
 
 
         public MockDataStore()
         {
-            items = new List<Item>();
-            var mockItems = new List<Item>
-            {
-                new Item { Id = Guid.NewGuid().ToString(), Name = "First item", Text ="This is an item description." },
-                new Item { Id = Guid.NewGuid().ToString(), Name = "Second item", Text ="This is an item description." },
-                new Item { Id = Guid.NewGuid().ToString(), Name = "Third item", Text ="This is an item description." },
-                new Item { Id = Guid.NewGuid().ToString(), Name = "Fourth item", Text ="This is an item description." },
-                new Item { Id = Guid.NewGuid().ToString(), Name = "Fifth item", Text ="This is an item description." },
-                new Item { Id = Guid.NewGuid().ToString(), Name = "Sixth item", Text ="This is an item description." },
-            };
+            PopulateItemsCollectionFromDataFile();
+        }
 
-            foreach (var item in mockItems)
-            {
-                items.Add(item);
-            }
+
         private async void PopulateItemsCollectionFromDataFile()
         {
             items = await ItemSerialization.ReadAllData(VariablesGlobal.NAME_FILE_DATA);
@@ -63,10 +51,8 @@ namespace ToDo.Services
             return await Task.FromResult(items.FirstOrDefault(s => s.Id == id));
         }
 
-        public async Task<IEnumerable<Item>> GetItemsAsync(bool forceRefresh = false)
         public async Task<IEnumerable<Item>> GetItemsFromFileAsync(bool forceRefresh = false)
         {
-            return await Task.FromResult(items);
             return await ItemSerialization.ReadAllData(VariablesGlobal.NAME_FILE_DATA);
         }
     }
